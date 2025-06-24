@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Mapa Interativo</title>
+    <style>
+        body {
+            text-align: center;
+            margin-top: 30px;
+        }
+        #mapaImagem {
+            width: 600px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Mapa Interativo</h1>
+    <p>Clique no mapa para visualizar as etiquetas.</p>
+
+    <img id="mapaImagem" src="mapa/mapa_branco.png" alt="Mapa em branco">
+
+    <script>
+        const mapa = document.getElementById('mapaImagem');
+        let etiquetado = false;
+
+        mapa.addEventListener('click', function() {
+            if (!etiquetado) {
+                mapa.src = 'mapa/mapa_etiquetado.png';
+                etiquetado = true;
+            } else {
+                mapa.src = 'mapa/mapa_branco.png';
+                etiquetado = false;
+            }
+        });
+    </script>
+
+</body>
+</html>
